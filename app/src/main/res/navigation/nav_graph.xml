@@ -22,6 +22,10 @@
         <action
             android:id="@+id/action_detalhesProduto_to_pagamento"
             app:destination="@id/pagamento" />
+        <argument
+            android:name="produtoId"
+            app:argType="long" />
+
     </fragment>
     <fragment android:id="@+id/pagamento"
         android:label="Pagamento"
@@ -29,6 +33,7 @@
         tools:layout="@layout/pagamento">
         <action
             android:id="@+id/action_pagamento_to_listaProdutos"
-            app:destination="@id/listaProdutos" />
+            app:destination="@id/listaProdutos"
+            app:popUpTo="@id/nav_graph" />
     </fragment>
 </navigation>
