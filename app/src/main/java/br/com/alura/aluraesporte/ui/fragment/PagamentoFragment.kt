@@ -15,6 +15,7 @@ import br.com.alura.aluraesporte.model.Pagamento
 import br.com.alura.aluraesporte.model.Produto
 import br.com.alura.aluraesporte.ui.viewmodel.PagamentoViewModel
 import kotlinx.android.synthetic.main.pagamento.*
+import org.koin.android.viewmodel.ext.android.sharedViewModel
 import org.koin.android.viewmodel.ext.android.viewModel
 
 private const val FALHA_AO_CRIAR_PAGAMENTO = "Falha ao criar pagamento"
@@ -23,6 +24,7 @@ private const val COMPRA_REALIZADA = "Compra realizada"
 
 class PagamentoFragment : BaseFragment() {
 
+    private val estadoAppViewModel: EstadoAppViewModel by sharedViewModel()
     private val argumentos by navArgs<PagamentoFragmentArgs>()
     private val produtoId by lazy {
        argumentos.produtoId
@@ -46,6 +48,7 @@ class PagamentoFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         configuraBotaoConfirmaPagamento()
+        estadoAppViewModel.temAppBar = true
         buscaProduto()
     }
 
