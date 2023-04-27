@@ -42,7 +42,7 @@ class DetalhesProdutoFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         buscaProduto()
-        estadoAppViewModel.temAppBar = true
+        estadoAppViewModel.temComponentes = ComponentesVisuais(true)
         configuraBotaoComprar()
     }
 

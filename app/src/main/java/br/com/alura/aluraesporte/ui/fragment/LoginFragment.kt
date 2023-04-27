@@ -36,7 +36,7 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        estadoAppViewModel.temAppBar = false
+        estadoAppViewModel.temComponentes = ComponentesVisuais()
         login_botao_logar.setOnClickListener {
             viewModel.loga()
             vaiParaListaDeProdutos()
